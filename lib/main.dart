@@ -5,7 +5,6 @@ class MyBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Center(
       child: Column(
         children: [
@@ -49,42 +48,6 @@ class MyBody extends StatelessWidget {
   }
 }
 
-class ListViewTree extends StatelessWidget{
-  const ListViewTree({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.all(8),
-      children: const <Widget>[
-        Card(
-          child: ListTile(
-            title: Text("ФИО1"),
-            subtitle: Text("год - год"),
-          ),
-        ),
-        Card(
-          child: ListTile(
-            title: Text("ФИО2"),
-            subtitle: Text("год - год"),
-          ),
-        ),
-        Card(
-          child: ListTile(
-            title: Text("ФИО3"),
-            subtitle: Text("год - год"),
-          ),
-        ),
-        Card(
-          child: ListTile(
-            title: Text("ФИО4"),
-            subtitle: Text("год - год"),
-          ),
-        ),
-      ]
-    );
-  }
-}
 void main() {
   runApp(
     MaterialApp(
@@ -93,8 +56,7 @@ void main() {
         appBar: AppBar(
           title: const Text('AppBar'),
         ),
-        body: //const MyBody(),
-        const ListViewTree(),
+        body: const MyBody(),
       ),
     ),
   );
