@@ -5,7 +5,6 @@ class MyBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Center(
       child: Column(
         children: [
@@ -49,42 +48,29 @@ class MyBody extends StatelessWidget {
   }
 }
 
-class ListViewTree extends StatelessWidget{
-  const ListViewTree({super.key});
+class ListViewTree extends StatelessWidget {
+  final titles = ["ФИО1", "ФИО2", "ФИО3", "ФИО4"];
+  final subtitles = ["год - год", "год - год", "год - год", "год - год"];
+
+  ListViewTree({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.all(8),
-      children: const <Widget>[
-        Card(
-          child: ListTile(
-            title: Text("ФИО1"),
-            subtitle: Text("год - год"),
-          ),
-        ),
-        Card(
-          child: ListTile(
-            title: Text("ФИО2"),
-            subtitle: Text("год - год"),
-          ),
-        ),
-        Card(
-          child: ListTile(
-            title: Text("ФИО3"),
-            subtitle: Text("год - год"),
-          ),
-        ),
-        Card(
-          child: ListTile(
-            title: Text("ФИО4"),
-            subtitle: Text("год - год"),
-          ),
-        ),
-      ]
+    return ListView.builder(
+        itemCount: titles.length,
+        itemBuilder: (context, index) {
+          return Card(
+            child: ListTile(
+              title: Text(titles[index]),
+              subtitle: Text(subtitles[index]),
+            ),
+          );
+        },
+        padding: const EdgeInsets.all(8)
     );
   }
 }
+
 void main() {
   runApp(
     MaterialApp(
@@ -93,8 +79,7 @@ void main() {
         appBar: AppBar(
           title: const Text('AppBar'),
         ),
-        body: //const MyBody(),
-        const ListViewTree(),
+        body: ListViewTree(),
       ),
     ),
   );
